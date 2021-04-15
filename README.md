@@ -52,6 +52,9 @@ python self_assemble_test.py -opt PATH-to-json_file
 
 ```
 
+**- Requirement of packages**
+
+The list of packages required to run the code is given in `chasnet.yml` file.
 
 ## Contributors
 
