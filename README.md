@@ -1,4 +1,4 @@
-The repository contains the official code for the work "Channel Split Convolutional Neural Network (ChaSNet) for Thermal ImageSuper-Resolution" accepted for PBVS-2021 workshop in-conjuction with CVPR-2021 conference.
+The repository contains the official code for the work **"Channel Split Convolutional Neural Network (ChaSNet) for Thermal ImageSuper-Resolution"** accepted for PBVS-2021 workshop in-conjuction with CVPR-2021 conference.
 
 <img src="Images/Network.png" width="800">
 <img src="Images/Track2Net.png" width="800">
