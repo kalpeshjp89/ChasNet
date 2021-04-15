@@ -25,7 +25,7 @@ The repository contains the official code for the work **"Channel Split Convolut
 |PBVS-2020 winner |34.49 |0.9073 |- |- |
 |TherISuRNet |34.49 |0.9101 |36.76 |0.9450 |
 |Proposed |34.86 |0.9133 |37.38 |0.9509 |
-|Proposed+ |34.90 |0.9134 |37.49 |0.9518 |
+|Proposed+ |**34.90** |**0.9134** |**37.49** |**0.9518** |
 
 **- Pre-Trained models**
 
