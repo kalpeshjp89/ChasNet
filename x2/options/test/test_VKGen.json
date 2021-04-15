@@ -1,0 +1,35 @@
+{
+  "name": "Combined_Valid_PBVS_SA"
+  , "suffix": null
+  , "model": "our"
+  , "scale": 2
+  , "gpu_ids": [0]
+
+  , "datasets": {
+    "test_1": { // the 1st test dataset
+      "name": "PBVS21_Test"
+      , "mode": "LR"
+      //, "dataroot_HR": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/Track2/TryUnet/Test/Track2-TestHR"
+      , "dataroot_LR": "/media/kalpesh/Kalpesh/PBVS-2021/Test_PBVS_2021/LR"
+    }
+  }
+
+  , "path": {
+    "root": "/media/kalpesh/Kalpesh/PBVS-2021/Code x2 Combined"
+    , "pretrain_model_G": "/media/kalpesh/Kalpesh/PBVS-2021/Code x2 Combined/196000_G.pth"
+    , "pretrain_model_G2": "/media/kalpesh/Kalpesh/PBVS-2021/68000_G.pth"
+  }
+
+  , "network_G": {
+    "which_model_G": "ourgen" // RRDB_net | sr_resnet
+    , "norm_type": "batch"
+    , "mode": "CNA"
+    , "nf": 64
+    , "nb": 23
+    , "in_nc": 3
+    , "out_nc": 3
+
+    , "gc": 32
+    , "group": 1
+  }
+}
