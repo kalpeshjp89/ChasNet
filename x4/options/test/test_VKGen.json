@@ -1,0 +1,34 @@
+{
+  "name": "PBVS_Validation_x4_selfasmbl"
+  , "suffix": null
+  , "model": "our"
+  , "scale": 4
+  , "gpu_ids": [0]
+
+  , "datasets": {
+    "test_1": { // the 1st test dataset
+      "name": "Testing_Flir"
+      , "mode": "LR"
+      //, "dataroot_HR": "/home/mlip/Documents/Kalpesh/ThermalSR/GT/val_hr"
+      , "dataroot_LR": "/home/mlip/Documents/Kalpesh/ThermalSR/GT/val_lr"
+    }
+  }
+
+  , "path": {
+    "root": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/Track1/Main_LargeChannels/"
+    , "pretrain_model_G": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/Track1/Main_LargeChannels/experiments/LargeChannels/models/199000_G.pth"
+  }
+
+  , "network_G": {
+    "which_model_G": "ourgen" // RRDB_net | sr_resnet
+    , "norm_type": "batch"
+    , "mode": "CNA"
+    , "nf": 128
+    , "nb": 23
+    , "in_nc": 3
+    , "out_nc": 3
+
+    , "gc": 32
+    , "group": 1
+  }
+}
