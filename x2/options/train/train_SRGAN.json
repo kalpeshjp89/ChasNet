@@ -1,0 +1,86 @@
+// Not total the same as SRGAN in <Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network>
+{
+  "name": "Try1_x2_GAN" //  please remove "debug_" during training
+  , "use_tb_logger": true
+  , "model":"srgan"
+  , "scale": 2
+  , "gpu_ids": [0]
+
+  , "datasets": {
+    "train": {
+      "name": "PBVS21_Train"
+      , "mode": "LRHR"
+      , "dataroot_HR": "/home/mlip/Documents/Kalpesh/ThermalSR/challengedataset/train/640_flir_hr"
+      , "dataroot_LR": "/home/mlip/Documents/Kalpesh/ThermalSR/challengedataset/train/320_axis_mr"
+      , "subset_file": null
+      , "use_shuffle": true
+      , "n_workers": 8
+      , "batch_size": 2
+      , "HR_size": 192
+      , "use_flip": true
+      , "use_rot": true
+    }
+    , "val": {
+      "name": "PBVS21_Val"
+      , "mode": "LR"
+      , "dataroot_LR": "/home/mlip/Documents/Kalpesh/ThermalSR/challengedataset/test/320_axis_mr"
+    }
+  }
+
+  , "path": {
+    "root": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/Track2"
+    //, "resume_state": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/Track2/experiments/Try1_x2_GAN/training_state/8000.state"
+    , "pretrain_model_G": null
+  }
+
+  , "network_G": {
+    "which_model_G": "ourgen" // RRDB_net | sr_resnet | SRGANGen
+    , "norm_type": "batch"
+    , "mode": "CNA"
+    , "nf": 64
+    , "nb": 23
+    , "in_nc": 3
+    , "out_nc": 3
+  }
+  , "network_D": {
+    "which_model_D": "discriminator_SRGAN"
+    , "norm_type": "batch"
+    , "act_type": "leakyrelu"
+    , "mode": "CNA"
+    , "nf": 64
+    , "in_nc": 3
+  }
+
+  , "train": {
+    "lr_G": 2e-4
+    , "weight_decay_G": 0
+    , "beta1_G": 0.9
+    , "lr_D": 1e-4
+    , "weight_decay_D": 0
+    , "beta1_D": 0.9
+    , "lr_scheme": "MultiStepLR"
+    , "lr_steps": [40000, 80000, 120000, 160000]
+    , "lr_gamma": 0.5
+
+    , "pixel_criterion": "l2"
+    , "pixel_weight": -1
+    , "feature_criterion": "l2"
+    , "feature_weight": -1
+    , "gan_type": "lsgan"
+    , "gan_weight": 0.5
+
+    //for wgan-gp
+    // , "D_update_ratio": 1
+    // , "D_init_iters": 0
+    // , "gp_weigth": 10
+
+    , "manual_seed": 0
+    , "niter": 200000
+    , "val_freq": 2e3
+  }
+
+  , "logger": {
+    "print_freq": 400
+    , "save_checkpoint_freq": 2e3
+  }
+}

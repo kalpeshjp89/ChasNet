@@ -1,0 +1,67 @@
+{
+  "name": "Try1_x2_PSNR" //  please remove "debug_" during training
+  , "use_tb_logger": true
+  , "model":"our" //our-srgan
+  , "scale": 2
+  , "gpu_ids": [0]
+
+  , "datasets": {
+    "train": {
+      "name": "PBVS21_Train"
+      , "mode": "LRHR"
+      , "dataroot_HR": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/Track2/Train/HR"
+      , "dataroot_LR": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/Track2/Train/LR"
+      , "subset_file": null
+      , "use_shuffle": true
+      , "n_workers": 8
+      , "batch_size": 4
+      , "HR_size": 192 // 128 | 192
+      , "use_flip": true
+      , "use_rot": true
+    }
+    , "val": {
+      "name": "PBVS21_Val"
+      , "mode": "LRHR"
+      , "dataroot_HR": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/Track2/Val/HR"
+      , "dataroot_LR": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/Track2/Val/LR"
+    }
+  }
+
+  , "path": {
+    "root": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/Track2"
+  //, "resume_state": "/home/mlip/Documents/Kalpesh/ThermalSR/Try1/experiments/Try1_OldData/training_state/35000.state"
+  , "pretrain_model_G": null
+  }
+  , "network_G": {
+    "which_model_G": "ourgen" // RRDB_net | sr_resnet
+    , "norm_type": "batch"
+    , "mode": "CNA"
+    , "nf": 64
+    , "nb": 23
+    , "in_nc": 3
+    , "out_nc": 3
+    , "gc": 32
+    , "group": 1
+  }
+
+  , "train": {
+    "lr_G": 2e-4
+    , "lr_scheme": "MultiStepLR"
+    , "lr_steps": [40000, 80000, 120000, 160000]
+    , "lr_gamma": 0.5
+
+    //, "pixel_criterion": "l1"
+    //, "pixel_weight": 1.0
+    , "pixel_criterion": "l1"
+    , "pixel_weight": 1
+    , "val_freq": 1e3
+
+    , "manual_seed": 0
+    , "niter": 200000
+  }
+
+  , "logger": {
+    "print_freq": 200
+    , "save_checkpoint_freq": 1e3
+  }
+}
