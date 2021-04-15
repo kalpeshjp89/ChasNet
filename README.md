@@ -56,6 +56,5 @@ python self_assemble_test.py -opt PATH-to-json_file
 
 The list of packages required to run the code is given in `chasnet.yml` file.
 
-## Contributors
-
-- Kalpesh Prajapati <kalpesh.jp89@gmail.com>
+We are thankful to Xinntao for their ESRGAN code using which this work has been implemented.
+For any problem, you may contact at <kalpesh.jp89@gmail.com>.
