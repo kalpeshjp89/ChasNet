@@ -4,19 +4,21 @@ The repository contains the official code for the work **"Channel Split Convolut
 <img src="Images/Network.png" width="800">
 <img src="Images/Track2Net.png" width="800">
 <img src="Images/CB.png" width="800">
-**Result** (* x2 results are taken on LR images obtained by bicubic downscaling on MR data)
+**Result**
+(* x2 results are taken on LR images obtained by bicubic downscaling on MR data)
+
 |Method |x4 PSNR |x4 SSIM |x2 PSNR |x2 SSIM |
 |----- |----- |----- |----- |----- |
 |Bicubic |32.66 |0.8625 |34.74 |0.9200 |
 |SRResNet |33.12 |0.9018 |33.66 |0.9229 |
 |MSRN |34.47 |0.9076 |36.96 |0.9471 |
 |SRFeat |34.12 |0.9007 |- |- |
-|EDSR \cite{EDSR} & 34.48 & 0.9068 & 36.91 & 0.9466 \\ \hline
-|RCAN \cite{RCAN1} & 34.42 & 0.9072 & 36.67 & 0.9438 \\ \hline
-|TEN \cite{choithermalsr} & 33.62 & 0.8910 & 36.10 & 0.9392 \\ \hline
-|CNN-IR \cite{Bhatt2018} & 33.77 & 0.8938 & 36.66 & 0.9438 \\ \hline
-|PBVS-2020 winner \cite{rivadeneira2020thermal} & 34.49 & 0.9073 & - & - \\ \hline
-|TherISuRNet \cite{therisurnet} & 34.49 & 0.9101 & 36.76 & 0.9450 \\ \hline
+|EDSR |34.48 |0.9068 |36.91 |0.9466 |
+|RCAN |34.42 |0.9072 |36.67 |0.9438 |
+|TEN |33.62 |0.8910 |36.10 |0.9392 |
+|CNN-IR |33.77 |0.8938 |36.66 |0.9438 |
+|PBVS-2020 winner |34.49 |0.9073 |- |- |
+|TherISuRNet |34.49 |0.9101 |36.76 |0.9450 |
 |Proposed |34.86 |0.9133 |37.38 |0.9509 |
 |Proposed+ |34.90 |0.9134 |37.49 |0.9518 |
 
