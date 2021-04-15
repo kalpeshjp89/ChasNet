@@ -1,10 +1,15 @@
+# Channel Split Convolutional Neural Network (ChaSNet) for Thermal ImageSuper-Resolution
+
 The repository contains the official code for the work **"Channel Split Convolutional Neural Network (ChaSNet) for Thermal ImageSuper-Resolution"** accepted for PBVS-2021 workshop in-conjuction with CVPR-2021 conference.
 
 **Description**
+
 <img src="Images/Network.png" width="800">
 <img src="Images/Track2Net.png" width="800">
 <img src="Images/CB.png" width="800">
+
 **Result**
+
 (* x2 results are taken on LR images obtained by bicubic downscaling on MR data)
 
 |Method |x4 PSNR |x4 SSIM |x2 PSNR |x2 SSIM |
@@ -23,9 +28,11 @@ The repository contains the official code for the work **"Channel Split Convolut
 |Proposed+ |34.90 |0.9134 |37.49 |0.9518 |
 
 **-Pre-Trained models**
+
 The pre-trained model for track-2 (i.e. scaling of x2) is shared with the repository while the pre-trained model for the track-1 (i.e. scaling of x4) can be downloaded from the [link](https://drive.google.com/file/d/1jpCZn1bDX2qSUKYc_2Q5bpBGsF_p0sCr/view?usp=sharing).
 
 **-Training the model**
+
 To train from scratch, you need to set root directory and dataset directory into `options/train/train_vkgenPSNR.json` file. Then run the following command to start the training.
 ```javascript
 python train.py -opt PATH-to-json_file
@@ -33,4 +40,5 @@ python train.py -opt PATH-to-json_file
 ```
 
 ## Contributors
+
 - Kalpesh Prajapati <kalpesh.jp89@gmail.com>
